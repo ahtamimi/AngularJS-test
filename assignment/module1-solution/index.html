@@ -22,6 +22,7 @@
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="check();">Check If Too Much</button>
+             <span> This app. does not consider empty item, i.e., , , as an item towards to the count</span>
          </div>
          <div class="form-group message" ng-class="isEmpty ? 'empty-style' : 'not-empty-style'">
            {{message}}
