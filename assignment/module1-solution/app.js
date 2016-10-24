@@ -10,13 +10,13 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
 	$scope.text="";
 	$scope.message="";
-	$scope.isEmpty = false;
+	$scope.isEmpty = 0;
 
 	$scope.check = function () {
 		
 		if($scope.text.length === 0 ){
 			$scope.message = "Please enter data first";
-			$scope.isEmpty = true;
+			$scope.isEmpty = 1;
 		}
 		else {
 
@@ -33,7 +33,7 @@ function LunchCheckController($scope) {
 			else
 				$scope.message = "Too much!";
 
-			$scope.isEmpty = false;
+			$scope.isEmpty = 2;
 		} 
 	};
 	
