@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
-      .empty-style{color: red;border:1px solid red;}
-      .not-empty-style{color: green;border:1px solid green;}
+      .empty-font-style{color: red;}
+      .not-empty-font-style{color: green;}
+      .empty-border-style{border:1px solid red;}
+      .not-empty-border-style{border:1px solid green;}
     </style>
   </head>
 <body>
@@ -18,13 +20,14 @@
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control"
-             ng-model="text">
+             ng-model="text"
+             ng-class="isEmpty === 1 ? 'empty-border-style' : ( isEmpty === 2 ? 'not-empty-border-style' : '')">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="check();">Check If Too Much</button>
              <span> This app. does not consider empty item, i.e., , , as an item towards to the count</span>
          </div>
-         <div class="form-group message" ng-class="isEmpty ? 'empty-style' : 'not-empty-style'">
+         <div class="form-group message" ng-class="isEmpty === 1  ? 'empty-font-style' : 'not-empty-font-style'">
            {{message}}
          </div>
    </div>
